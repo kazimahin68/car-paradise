@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login";
 import ErrorPage from "../pages/ErrorPage";
 import Register from "../pages/Register";
+import AllCars from "../pages/dashboard/AllCars";
 
 export const router = createBrowserRouter([
   {
@@ -40,8 +41,12 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             <Dashboard></Dashboard>
           </PrivateRoute>
-        ),
+        )
       },
+      {
+        path: "all-cars",
+        element: <PrivateRoute><AllCars></AllCars></PrivateRoute>
+      }
     ],
   },
 ]);

@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 const SingleCar = ({ car }) => {
-  const { id, brand_name, model, price, description, img_url } = car;
-  console.log(id, brand_name, model, price);
+  const { brand_name, model, price, description, img_url } = car;
+//   console.log(id, brand_name, model, price);
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>

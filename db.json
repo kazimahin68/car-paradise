@@ -1,96 +1,85 @@
 {
-    "cars": [
-        {
-            "id": "1",
-            "brand_name": "Toyota",
-            "description": "A reliable and fuel-efficient sedan.",
-            "img_url": "https://di-uploads-pod44.dealerinspire.com/nyetoyota/uploads/2024/01/2025-Toyota-Camry-1.jpg",
-            "price": "30000",
-            "brand_country": "Japan",
-            "model": "Camry"
-        },
-        {
-            "id": "2",
-            "brand_name": "BMW",
-            "description": "A luxury sedan with advanced features.",
-            "img_url": "https://alcf.s3.us-west-1.amazonaws.com/_custom/2023/bmw/5-series/2023-bmw-m550i-xdrive-main.png",
-            "price": "55000",
-            "brand_country": "Germany",
-            "model": "5 Series"
-        },
-        {
-            "id": "3",
-            "brand_name": "Ford",
-            "description": "A powerful and versatile pickup truck.",
-            "img_url": "https://s1.cdn.autoevolution.com/images/news/2024-ford-f-150-gets-unofficial-refresh-shows-all-colorful-goodies-inside-out-203428_1.jpg",
-            "price": "40000",
-            "brand_country": "USA",
-            "model": "F-150"
-        },
-        {
-            "id": "4",
-            "brand_name": "Tesla",
-            "description": "An innovative electric vehicle with autopilot.",
-            "img_url": "https://example.com/images/tesla_model3.jpg",
-            "price": "45000",
-            "brand_country": "USA",
-            "model": "Model 3"
-        },
-        {
-            "id": "5",
-            "brand_name": "Hyundai",
-            "description": "A compact car with great value for money.",
-            "img_url": "https://example.com/images/hyundai_elantra.jpg",
-            "price": "20000",
-            "brand_country": "South Korea",
-            "model": "Elantra"
-        },
-        {
-            "id": "6",
-            "brand_name": "Audi",
-            "description": "A stylish and high-performance luxury sedan.",
-            "img_url": "https://example.com/images/audi_a6.jpg",
-            "price": "60000",
-            "brand_country": "Germany",
-            "model": "A6"
-        },
-        {
-            "id": "7",
-            "brand_name": "Honda",
-            "description": "A compact and efficient sedan.",
-            "img_url": "https://example.com/images/honda_civic.jpg",
-            "price": "22000",
-            "brand_country": "Japan",
-            "model": "Civic"
-        },
-        {
-            "id": "8",
-            "brand_name": "Chevrolet",
-            "description": "A rugged and dependable SUV.",
-            "img_url": "https://example.com/images/chevrolet_tahoe.jpg",
-            "price": "50000",
-            "brand_country": "USA",
-            "model": "Tahoe"
-        },
-        {
-            "id": "9",
-            "brand_name": "Mercedes-Benz",
-            "description": "An elegant and luxurious coupe.",
-            "img_url": "https://example.com/images/mercedes_benz_eclass.jpg",
-            "price": "70000",
-            "brand_country": "Germany",
-            "model": "E-Class"
-        },
-        {
-            "id": "10",
-            "brand_name": "Nissan",
-            "description": "A sporty and agile compact car.",
-            "img_url": "https://example.com/images/nissan_sentra.jpg",
-            "price": "19000",
-            "brand_country": "Japan",
-            "model": "Sentra"
-        }
-    
-    ]
-    
+  "cars": [
+    {
+      "id": "1",
+      "brand_name": "Toyota",
+      "description": "A reliable and fuel-efficient sedan.",
+      "img_url": "https://di-uploads-pod44.dealerinspire.com/nyetoyota/uploads/2024/01/2025-Toyota-Camry-1.jpg",
+      "price": "30000",
+      "brand_country": "Japan",
+      "model": "Camry"
+    },
+    {
+      "id": "2",
+      "brand_name": "BMW",
+      "description": "A luxury sedan with advanced features.",
+      "img_url": "https://alcf.s3.us-west-1.amazonaws.com/_custom/2023/bmw/5-series/2023-bmw-m550i-xdrive-main.png",
+      "price": "55000",
+      "brand_country": "Germany",
+      "model": "5 Series"
+    },
+    {
+      "id": "3",
+      "brand_name": "Ford",
+      "description": "A powerful and versatile pickup truck.",
+      "img_url": "https://s1.cdn.autoevolution.com/images/news/2024-ford-f-150-gets-unofficial-refresh-shows-all-colorful-goodies-inside-out-203428_1.jpg",
+      "price": "40000",
+      "brand_country": "USA",
+      "model": "F-150"
+    },
+    {
+      "id": "4",
+      "brand_name": "Tesla",
+      "description": "An innovative electric vehicle with autopilot.",
+      "img_url": "https://example.com/images/tesla_model3.jpg",
+      "price": "45000",
+      "brand_country": "USA",
+      "model": "Model 3"
+    },
+    {
+      "id": "5",
+      "brand_name": "Hyundai",
+      "description": "A compact car with great value for money.",
+      "img_url": "https://example.com/images/hyundai_elantra.jpg",
+      "price": "20000",
+      "brand_country": "South Korea",
+      "model": "Elantra"
+    },
+    {
+      "id": "6",
+      "brand_name": "Audi",
+      "description": "A stylish and high-performance luxury sedan.",
+      "img_url": "https://example.com/images/audi_a6.jpg",
+      "price": "60000",
+      "brand_country": "Germany",
+      "model": "A6"
+    },
+    {
+      "id": "7",
+      "brand_name": "Honda",
+      "description": "A compact and efficient sedan.",
+      "img_url": "https://example.com/images/honda_civic.jpg",
+      "price": "22000",
+      "brand_country": "Japan",
+      "model": "Civic"
+    },
+    {
+      "id": "8",
+      "brand_name": "Chevrolet",
+      "description": "A rugged and dependable SUV.",
+      "img_url": "https://example.com/images/chevrolet_tahoe.jpg",
+      "price": "50000",
+      "brand_country": "USA",
+      "model": "Tahoe"
+    },
+    {
+      "id": "9",
+      "brand_name": "Mercedes-Benz",
+      "description": "An elegant and luxurious coupe.",
+      "img_url": "https://example.com/images/mercedes_benz_eclass.jpg",
+      "price": "70000",
+      "brand_country": "Germany",
+      "model": "E-Class"
+    }
+  ]
 }
