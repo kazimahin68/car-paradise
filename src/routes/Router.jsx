@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import ErrorPage from "../pages/ErrorPage";
 import Register from "../pages/Register";
 import AllCars from "../pages/dashboard/AllCars";
+import AddNewCar from "../pages/dashboard/AddNewCar";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "all-cars",
         element: <PrivateRoute><AllCars></AllCars></PrivateRoute>
+      },
+      {
+        path: "add-car",
+        element: <PrivateRoute><AddNewCar></AddNewCar></PrivateRoute>
       }
     ],
   },

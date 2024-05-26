@@ -31,7 +31,7 @@ const DashboardLayout = () => {
               <ActiveLink to="all-cars">All Cars</ActiveLink>
             </li>
             <li>
-              <ActiveLink to="/items">Add New Car</ActiveLink>
+              <ActiveLink to="add-car">Add New Car</ActiveLink>
             </li>
           </ul>
           <button className="btn font-bold text-lg bg-green-600 rounded-lg">

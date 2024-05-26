@@ -80,6 +80,42 @@
       "price": "70000",
       "brand_country": "Germany",
       "model": "E-Class"
+    },
+    {
+      "id": "10",
+      "brand_name": "Nissan",
+      "description": "A sporty and agile compact car.",
+      "img_url": "https://example.com/images/nissan_sentra.jpg",
+      "price": "190000",
+      "brand_country": "Japan",
+      "model": "Sentra"
+    },
+    {
+      "id": "4670234",
+      "brand_name": "sdlfkjasdfh",
+      "description": "fgjhdfjhnfdjncfjndcjhndc",
+      "img_url": "https://example.com/images/nissan_sentra.jpg",
+      "price": "342545",
+      "brand_country": "Japan",
+      "model": "Sentra"
+    },
+    {
+      "id": "4670234",
+      "brand_name": "sdlfkjasdfh",
+      "description": "fgjhdfjhnfdjncfjndcjhndc",
+      "img_url": "https://example.com/images/nissan_sentra.jpg",
+      "price": "342545",
+      "brand_country": "Japan",
+      "model": "Sentra"
+    },
+    {
+      "id": "4670234",
+      "brand_name": "sdlfkjasdfh",
+      "description": "fgjhdfjhnfdjncfjndcjhndc",
+      "img_url": "https://example.com/images/nissan_sentra.jpg",
+      "price": "342545",
+      "brand_country": "Japan",
+      "model": "Sentra"
     }
   ]
 }
