@@ -1,14 +1,14 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../AuthProvider/AuthProvider";
+import { AuthContext } from "../authProvider/AuthProvider";
+import ActiveLink from "./ActiveLink";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-  // console.log(user.photoURL);
-//   const handleLogout = () =>{
-//     logOut();
-//   }
+  const handleLogout = () =>{
+    logOut();
+  }
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -34,33 +34,33 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="/">Home</Link>
+              <ActiveLink to="/">Home</ActiveLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <ActiveLink to="/about">About</ActiveLink>
             </li>
             <li>
-              <Link to="">Dashboard</Link>
+              <ActiveLink to="">Dashboard</ActiveLink>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl">Car Paradise</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <ActiveLink className="font-bold" to="/">Home</ActiveLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <ActiveLink to="/about">About</ActiveLink>
           </li>
-          <li>
-            <Link to="dashboard">Dashboard</Link>
-          </li>
+          {user ? <li>
+            <ActiveLink to="dashboard">Dashboard</ActiveLink>
+          </li> : ""}
         </ul>
       </div>
       <div className="navbar-end">
-        {/* {user ? (
+        {user ? (
           <div className="flex items-center gap-2">
             <div className="avatar online">
               <div className="w-12 rounded-full">
@@ -74,7 +74,7 @@ const Navbar = () => {
           <button className="btn bg-green-600 font-bold">
             <Link to="/login">Login</Link>
           </button>
-        )} */}
+        )}
       </div>
     </div>
   );

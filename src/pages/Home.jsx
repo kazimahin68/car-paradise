@@ -1,10 +1,14 @@
-import Navbar from "../components/Navbar";
+import { useLoaderData } from "react-router-dom";
+import Banner from "../components/home/Banner";
+import Cars from "../components/home/Cars";
 
 const Home = () => {
+    const cars = useLoaderData();
+    // console.log(cars)
     return (
         <div>
-            <Navbar></Navbar>
-            <h2>This is my Home</h2>
+            <Banner></Banner>
+            <Cars cars={cars}></Cars>
         </div>
     );
 };
