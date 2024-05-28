@@ -5,7 +5,7 @@
       "brand_name": "Toyota",
       "description": "A reliable and fuel-efficient sedan.",
       "img_url": "https://di-uploads-pod44.dealerinspire.com/nyetoyota/uploads/2024/01/2025-Toyota-Camry-1.jpg",
-      "price": "30000",
+      "price": "32000",
       "brand_country": "Japan",
       "model": "Camry"
     },
@@ -31,7 +31,7 @@
       "id": "4",
       "brand_name": "Tesla",
       "description": "An innovative electric vehicle with autopilot.",
-      "img_url": "https://example.com/images/tesla_model3.jpg",
+      "img_url": "https://www.tesla.com/ownersmanual/images/GUID-B5641257-9E85-404B-9667-4DA5FDF6D2E7-online-en-US.png",
       "price": "45000",
       "brand_country": "USA",
       "model": "Model 3"
@@ -40,7 +40,7 @@
       "id": "5",
       "brand_name": "Hyundai",
       "description": "A compact car with great value for money.",
-      "img_url": "https://example.com/images/hyundai_elantra.jpg",
+      "img_url": "https://s7d1.scene7.com/is/image/hyundai/2024-elantra-limited-ultimate-red-vehicle-browse-hero:16-9?wid=640&hei=360&fmt=webp-alpha",
       "price": "20000",
       "brand_country": "South Korea",
       "model": "Elantra"
@@ -49,7 +49,7 @@
       "id": "6",
       "brand_name": "Audi",
       "description": "A stylish and high-performance luxury sedan.",
-      "img_url": "https://example.com/images/audi_a6.jpg",
+      "img_url": "https://www.motortrend.com/uploads/sites/5/2020/10/2021-Audi-A6-Sport.jpg?w=768&width=768&q=75&format=webp",
       "price": "60000",
       "brand_country": "Germany",
       "model": "A6"
@@ -58,7 +58,7 @@
       "id": "7",
       "brand_name": "Honda",
       "description": "A compact and efficient sedan.",
-      "img_url": "https://example.com/images/honda_civic.jpg",
+      "img_url": "https://www.honda.ca/-/media/Brands/Honda/Models/TYPE-R/2023/Overview/03_Key-Features/Honda_Civic_TypeR_key-features_desktop_1036x520.png?h=520&iar=0&w=1036&rev=86a8e32265ac446dadf66e704156f39f&hash=F79E92877AED80EC7864F74CC77B2267",
       "price": "22000",
       "brand_country": "Japan",
       "model": "Civic"
@@ -67,7 +67,7 @@
       "id": "8",
       "brand_name": "Chevrolet",
       "description": "A rugged and dependable SUV.",
-      "img_url": "https://example.com/images/chevrolet_tahoe.jpg",
+      "img_url": "https://es.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2024/suvs/tahoe/trims/2023-tahoe-cc10706-1lz-g1w-trimselector.png?imwidth=960",
       "price": "50000",
       "brand_country": "USA",
       "model": "Tahoe"
@@ -76,7 +76,7 @@
       "id": "9",
       "brand_name": "Mercedes-Benz",
       "description": "An elegant and luxurious coupe.",
-      "img_url": "https://example.com/images/mercedes_benz_eclass.jpg",
+      "img_url": "https://cdn.jdpower.com/JDPower/Default/files/2018_mercedes-benz_e-class_cabriolet_17c45_05_720_1.jpg",
       "price": "70000",
       "brand_country": "Germany",
       "model": "E-Class"
@@ -85,35 +85,8 @@
       "id": "10",
       "brand_name": "Nissan",
       "description": "A sporty and agile compact car.",
-      "img_url": "https://example.com/images/nissan_sentra.jpg",
+      "img_url": "https://www.motortrend.com/uploads/sites/10/2019/01/2019-nissan-sentra-s-cvt-sedan-angular-front.png",
       "price": "190000",
-      "brand_country": "Japan",
-      "model": "Sentra"
-    },
-    {
-      "id": "4670234",
-      "brand_name": "sdlfkjasdfh",
-      "description": "fgjhdfjhnfdjncfjndcjhndc",
-      "img_url": "https://example.com/images/nissan_sentra.jpg",
-      "price": "342545",
-      "brand_country": "Japan",
-      "model": "Sentra"
-    },
-    {
-      "id": "4670234",
-      "brand_name": "sdlfkjasdfh",
-      "description": "fgjhdfjhnfdjncfjndcjhndc",
-      "img_url": "https://example.com/images/nissan_sentra.jpg",
-      "price": "342545",
-      "brand_country": "Japan",
-      "model": "Sentra"
-    },
-    {
-      "id": "4670234",
-      "brand_name": "sdlfkjasdfh",
-      "description": "fgjhdfjhnfdjncfjndcjhndc",
-      "img_url": "https://example.com/images/nissan_sentra.jpg",
-      "price": "342545",
       "brand_country": "Japan",
       "model": "Sentra"
     }

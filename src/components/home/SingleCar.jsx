@@ -5,7 +5,7 @@ const SingleCar = ({ car }) => {
 //   console.log(id, brand_name, model, price);
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
+      <figure className="h-56">
         <img src={img_url} alt="car" />
       </figure>
       <div className="card-body">

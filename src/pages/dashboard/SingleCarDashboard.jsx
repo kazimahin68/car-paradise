@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const SingleCarDashboard = ({ car, onDelete }) => {
   const { id, brand_name, model, price, description, img_url } = car;
@@ -42,7 +43,7 @@ const SingleCarDashboard = ({ car, onDelete }) => {
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
+      <figure className='h-56'>
         <img src={img_url} alt="car" />
       </figure>
       <div className="card-body">
@@ -60,7 +61,7 @@ const SingleCarDashboard = ({ car, onDelete }) => {
         <p className="mb-4">{description}</p>
         <div className="card-actions justify-center items-center gap-6">
           <button className="btn btn-success">Details</button>
-          <button className="btn btn-warning">Update</button>
+          <button className="btn btn-warning"><Link to={`edit-car/${id}`}>Update</Link></button>
           <button onClick={handleDelete} className="btn bg-red-600">
             Delete
           </button>
