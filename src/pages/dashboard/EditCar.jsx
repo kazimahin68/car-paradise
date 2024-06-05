@@ -3,8 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 
+
 const EditCar = () => {
   const car = useLoaderData();
+  console.log(car)
   // const {_id, brand_name, description, img_url, price, brand_country, model} = car;
   const [brand_name, setBrandName] = useState(car.brand_name);
   const [description, setDescription] = useState(car.description);
@@ -49,7 +51,7 @@ const EditCar = () => {
           },
           body: JSON.stringify(data),
         })
-          .then((res) => res.json)
+          .then((res) => res.json())
           .then(() => {
             toast.success("Car information successfully updated!", {
               position: "top-right",

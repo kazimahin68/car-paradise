@@ -10,6 +10,7 @@ import Register from "../pages/Register";
 import AllCars from "../pages/dashboard/AllCars";
 import AddNewCar from "../pages/dashboard/AddNewCar";
 import EditCar from "../pages/dashboard/EditCar";
+import Profile from "../pages/users/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>
+      },
+      {
+        path: "profile/:email",
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/users/${params.email}`)
       }
     ],
   },
@@ -60,4 +66,5 @@ export const router = createBrowserRouter([
       }
     ],
   },
+
 ]);

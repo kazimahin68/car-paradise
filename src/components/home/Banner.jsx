@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full h-96">
+      <div className="carousel w-full h-96 z-10">
         <div id="item1" className="carousel-item w-full">
           <img
             src="https://cdn.motor1.com/images/mgl/koBe6e/s3/2024-toyota-gr86-trueno-edition.jpg"

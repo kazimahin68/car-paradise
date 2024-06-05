@@ -58,12 +58,10 @@ const Navbar = () => {
           <li>
             <ActiveLink to="/about">About</ActiveLink>
           </li>
-          {user ? (
+          {user && (
             <li>
               <ActiveLink to="dashboard">Dashboard</ActiveLink>
             </li>
-          ) : (
-            ""
           )}
         </ul>
       </div>
@@ -72,7 +70,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="avatar online">
               <div className="btn btn-circle">
-                <img src={user?.photoURL} />
+                <Link to={`/profile/${user.email}`}><img src={user?.photoURL} alt="" title="Profile" /></Link>
               </div>
             </div>
             <button
