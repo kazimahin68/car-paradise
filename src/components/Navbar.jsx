@@ -6,9 +6,9 @@ import ActiveLink from "./ActiveLink";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const handleLogout = () =>{
+  const handleLogout = () => {
     logOut();
-  }
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -44,30 +44,42 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">Car Paradise</Link>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Car Paradise
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <ActiveLink className="font-bold" to="/">Home</ActiveLink>
+            <ActiveLink className="font-bold" to="/">
+              Home
+            </ActiveLink>
           </li>
           <li>
             <ActiveLink to="/about">About</ActiveLink>
           </li>
-          {user ? <li>
-            <ActiveLink to="dashboard">Dashboard</ActiveLink>
-          </li> : ""}
+          {user ? (
+            <li>
+              <ActiveLink to="dashboard">Dashboard</ActiveLink>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
       </div>
       <div className="navbar-end">
         {user ? (
           <div className="flex items-center gap-2">
             <div className="avatar online">
-              <div className="w-12 rounded-full">
+              <div className="btn btn-circle">
                 <img src={user?.photoURL} />
               </div>
             </div>
-            <button onClick={handleLogout} className="btn bg-green-600 font-bold">Logout
+            <button
+              onClick={handleLogout}
+              className="btn bg-green-600 font-bold"
+            >
+              Logout
             </button>
           </div>
         ) : (

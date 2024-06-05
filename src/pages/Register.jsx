@@ -5,7 +5,7 @@ import { AuthContext } from "../authProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -13,23 +13,38 @@ const Register = () => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
+    const name = form.name.value;
+    const photo = form.photo.value;
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
 
     if (password === confirmPassword) {
-      createUser(email, password).then((result) => {
-        // const registeredUser = result.user;
-        if (result) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Your work has been saved",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          form.reset();
-          navigate("/");
-        }
+      createUser(email, password).then(() => {
+        updateUserProfile(name, photo).then(() => {
+          const saveUser = { userName: name, email, userPhoto: photo };
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+          .then(res => res.json())
+          .then((data) => {
+            console.log(data)
+            if(data.insertedId) {
+              form.reset();
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "You are successfully registered",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/");
+            }
+          })
+        });
       });
     } else {
       setError("Password Does not match");
@@ -49,6 +64,18 @@ const Register = () => {
               type="text"
               name="name"
               id="name"
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="font-bold block text-gray-700">
+              Photo URL
+            </label>
+            <input
+              type="url"
+              name="photo"
+              id="photo"
               className="w-full px-3 py-2 border rounded"
               required
             />

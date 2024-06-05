@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const SingleCarDashboard = ({ car, onDelete }) => {
-  const { id, brand_name, model, price, description, img_url } = car;
+  const { _id, brand_name, model, price, description, img_url } = car;
   // console.log(brand_name, model, price, description, img_url)
 
   const handleDelete = async () => {
@@ -17,17 +17,17 @@ const SingleCarDashboard = ({ car, onDelete }) => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await fetch(`http://localhost:3000/cars/${id}`, {
+        await fetch(`http://localhost:5000/cars/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then(() => {
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
               icon: "success",
             });
-            onDelete(id); // Call the onDelete function after successful deletion
+            onDelete(_id); // Call the onDelete function after successful deletion
           })
           .catch((error) => {
             Swal.fire({
@@ -61,7 +61,7 @@ const SingleCarDashboard = ({ car, onDelete }) => {
         <p className="mb-4">{description}</p>
         <div className="card-actions justify-center items-center gap-6">
           <button className="btn btn-success">Details</button>
-          <button className="btn btn-warning"><Link to={`edit-car/${id}`}>Update</Link></button>
+          <button className="btn btn-warning"><Link to={`edit-car/${_id}`}>Update</Link></button>
           <button onClick={handleDelete} className="btn bg-red-600">
             Delete
           </button>

@@ -26,6 +26,7 @@ const AddNewCar = () => {
         const brand_country = form.brand_country.value;
         const model = form.model.value;
         // Clear the form after submission
+        form.reset();
         const data = {
           id,
           brand_name,
@@ -36,7 +37,7 @@ const AddNewCar = () => {
           model,
         };
 
-        await fetch("http://localhost:3000/cars", {
+        await fetch("http://localhost:5000/cars", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -54,7 +55,8 @@ const AddNewCar = () => {
               draggable: true,
               progress: undefined,
             });
-          });
+          }
+        );
       }
     });
   };
@@ -65,20 +67,6 @@ const AddNewCar = () => {
       className="mx-auto w-4/5 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mt-6"
     >
       <h2 className="text-2xl font-bold mb-4 text-center">Car Information</h2>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="id"
-        >
-          ID
-        </label>
-        <input
-          type="text"
-          name="id"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          required
-        />
-      </div>
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"

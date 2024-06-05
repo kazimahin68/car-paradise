@@ -11,8 +11,24 @@ const GoogleLogin = () => {
   const from = location?.state?.from?.pathname || "/";
 
   const handleGoogleLogin = () => {
-    googleLogin().then(() => {
-      navigate(from, { replace: true });
+    googleLogin().then((result) => {
+      const loggedUser = result.user;
+      const saveUser = {
+        userName: loggedUser.displayName,
+        email: loggedUser.email,
+        userPhoto: loggedUser.photoURL,
+      };
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(saveUser),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          navigate(from, { replace: true });
+        });
     });
   };
   return (
