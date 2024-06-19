@@ -2,7 +2,6 @@
 import { FaEdit } from "react-icons/fa";
 
 const DisplayProfileInfo = ({userData, handleToggle}) => {
-console.log(userData)
 const {userName, email} = userData;
   return (
     <div>

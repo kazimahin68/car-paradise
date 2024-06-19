@@ -6,14 +6,14 @@ const DashboardLayout = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center p-2">
-        {/* Page content here */}
-        <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
           className="btn btn-primary drawer-button lg:hidden"
         >
-          Open drawer
+          Open
         </label>
+        {/* Page content here */}
+        <Outlet></Outlet>
       </div>
       <div className="drawer-side">
         <label
@@ -25,7 +25,7 @@ const DashboardLayout = () => {
           <ul className="mt-12">
             {/* Sidebar content here */}
             <li>
-                <ActiveLink to="">Dashboard</ActiveLink>
+              <ActiveLink to="">Dashboard</ActiveLink>
             </li>
             <li>
               <ActiveLink to="all-cars">All Cars</ActiveLink>

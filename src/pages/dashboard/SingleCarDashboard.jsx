@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const SingleCarDashboard = ({ car, onDelete }) => {
   const { _id, brand_name, model, price, description, img_url } = car;
-  // console.log(brand_name, model, price, description, img_url)
 
   const handleDelete = async () => {
     Swal.fire({

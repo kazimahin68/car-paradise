@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DisplayProfileInfo from "./DisplayProfileInfo";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import EditProfileInfo from "./EditProfileInfo";
+import { useQuery } from "@tanstack/react-query";
+import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Profile = () => {
   const [toggleEdit, setToggleEdit] = useState(false);
-  const userData = useLoaderData();
+  const {user} = useContext(AuthContext)
+  // const userData = useLoaderData();
+  console.log(user)
+
+  const {data: userData = [], refetch} = useQuery({
+    queryKey: ["users"],
+    queryFn: async() =>{
+      const res = await fetch(`http://localhost:5000/users/${user?.email}`)
+      return res.json()
+    }
+  })
+  console.log(userData)
 
   const handleToggle = () => {
     setToggleEdit(!toggleEdit);
@@ -23,7 +36,7 @@ const Profile = () => {
       </div>
       <div className="col-span-2 bg-slate-800 rounded-md opacity-90">
         {toggleEdit ? (
-          <EditProfileInfo userData={userData} handleToggle={handleToggle}></EditProfileInfo>
+          <EditProfileInfo userData={userData} handleToggle={handleToggle} refetch ={refetch}></EditProfileInfo>
         ) : (
           <DisplayProfileInfo
             userData={userData}

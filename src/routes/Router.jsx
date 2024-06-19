@@ -21,7 +21,6 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/cars")
       },
       {
         path: "login",
@@ -32,9 +31,8 @@ export const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: "profile/:email",
+        path: "users/:email",
         element: <PrivateRoute><Profile></Profile></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/users/${params.email}`)
       }
     ],
   },
@@ -60,9 +58,8 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><AddNewCar></AddNewCar></PrivateRoute>
       },
       {
-        path: "all-cars/edit-car/:id",
-        element: <PrivateRoute><EditCar></EditCar></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/cars/${params.id}`)
+        path: "/dashboard/all-cars/edit-car/:id",
+        element: <PrivateRoute><EditCar></EditCar></PrivateRoute>
       }
     ],
   },

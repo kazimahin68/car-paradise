@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="avatar online">
               <div className="btn btn-circle">
-                <Link to={`/profile/${user.email}`}><img src={user?.photoURL} alt="" title="Profile" /></Link>
+                <Link to={`/users/${user.email}`}><img src={user?.photoURL} alt="" title="Profile" /></Link>
               </div>
             </div>
             <button

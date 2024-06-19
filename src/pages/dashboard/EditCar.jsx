@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
-
+import { useParams } from "react-router-dom";
 
 const EditCar = () => {
-  const car = useLoaderData();
-  console.log(car)
-  // const {_id, brand_name, description, img_url, price, brand_country, model} = car;
-  const [brand_name, setBrandName] = useState(car.brand_name);
-  const [description, setDescription] = useState(car.description);
-  const [img_url, setImgURL] = useState(car.img_url);
-  const [price, setPrice] = useState(car.price);
-  const [brand_country, setBrandCountry] = useState(car.brand_country);
-  const [model, setModel] = useState(car.model);
+  const { id } = useParams();
+
+  const { data: car = {}, refetch } = useQuery({
+    queryKey: ["car"],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/cars/${id}`);
+      return res.json();
+    },
+  });
+  const { brand_name, description, img_url, price, brand_country, model } = car;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +34,6 @@ const EditCar = () => {
         const price = form.price.value;
         const brand_country = form.brand_country.value;
         const model = form.model.value;
-        // Clear the form after submission
         const data = {
           brand_name,
           description,
@@ -53,6 +52,7 @@ const EditCar = () => {
         })
           .then((res) => res.json())
           .then(() => {
+            refetch();
             toast.success("Car information successfully updated!", {
               position: "top-right",
               autoClose: 3000,
@@ -82,8 +82,7 @@ const EditCar = () => {
         <input
           type="text"
           name="brand_name"
-          value={brand_name}
-          onChange={(e) => setBrandName(e.target.value)}
+          defaultValue={brand_name}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />
@@ -97,8 +96,7 @@ const EditCar = () => {
         </label>
         <textarea
           name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          defaultValue={description}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         ></textarea>
@@ -113,8 +111,7 @@ const EditCar = () => {
         <input
           type="text"
           name="img_url"
-          value={img_url}
-          onChange={(e) => setImgURL(e.target.value)}
+          defaultValue={img_url}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />
@@ -129,8 +126,7 @@ const EditCar = () => {
         <input
           type="number"
           name="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          defaultValue={price}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />
@@ -145,8 +141,7 @@ const EditCar = () => {
         <input
           type="text"
           name="brand_country"
-          value={brand_country}
-          onChange={(e) => setBrandCountry(e.target.value)}
+          defaultValue={brand_country}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />
@@ -161,8 +156,7 @@ const EditCar = () => {
         <input
           type="text"
           name="model"
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
+          defaultValue={model}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />

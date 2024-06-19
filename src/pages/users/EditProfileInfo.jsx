@@ -2,35 +2,35 @@
 
 // import { AuthContext } from "../../authProvider/AuthProvider";
 
-const EditProfileInfo = ({userData, handleToggle }) => {
-    const {_id, userName, userPhoto, email} = userData;
-    console.log(userData)
+const EditProfileInfo = ({ userData, handleToggle, refetch }) => {
+  const { userName, userPhoto, email } = userData;
 
-    // const {updateUserProfile} = useContext(AuthContext)
 
-    const handleUserUpdate = (e) =>{
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const photo = form.photo.value;
-        const email = form.email.value;
 
-        // updateUserProfile(name, photo).then(() => {
-            const updateUser = {userName: name, email, userPhoto: photo}
-            console.log(updateUser)
-            fetch(`http://localhost:5000/users/${_id}`, {
-                method: "PATCH",
-                headers: {
-                    'Content-type' : 'application.json'
-                },
-                body: JSON.stringify(updateUser)
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-        // })
-    }
+  const handleUserUpdate = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+
+    // updateUserProfile(name, photo).then(() => {
+    const updateUser = { userName: name, email, userPhoto: photo };
+    console.log(updateUser);
+    await fetch(`http://localhost:5000/users/${userData.email}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updateUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch()
+      });
+    // })
+  };
 
   return (
     <div className="w-4/5 m-auto p-5">
