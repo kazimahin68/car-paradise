@@ -28,7 +28,7 @@ const DashboardLayout = () => {
               <ActiveLink to="">Dashboard</ActiveLink>
             </li>
             <li>
-              <ActiveLink to="all-cars">All Cars</ActiveLink>
+              <ActiveLink to="merchant-cars">Your Cars</ActiveLink>
             </li>
             <li>
               <ActiveLink to="add-car">Add New Car</ActiveLink>

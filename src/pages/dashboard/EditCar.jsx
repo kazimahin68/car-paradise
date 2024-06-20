@@ -13,7 +13,7 @@ const EditCar = () => {
       return res.json();
     },
   });
-  const { brand_name, description, img_url, price, brand_country, model } = car;
+  const { brand_name, description, img_url, price, brand_country, model, available_quantity } = car;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -157,6 +157,21 @@ const EditCar = () => {
           type="text"
           name="model"
           defaultValue={model}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-sm font-bold mb-2"
+          htmlFor="available_quantity"
+        >
+          Available Quantity
+        </label>
+        <input
+          type="number"
+          defaultValue={available_quantity}
+          name="available_quantity"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />

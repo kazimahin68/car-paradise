@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
-const SingleCarDashboard = ({ car, onDelete }) => {
+const SingleCarDashboard = ({ car, refetch }) => {
   const { _id, brand_name, model, price, description, img_url } = car;
 
   const handleDelete = async () => {
@@ -26,7 +26,7 @@ const SingleCarDashboard = ({ car, onDelete }) => {
               text: "Your file has been deleted.",
               icon: "success",
             });
-            onDelete(_id); // Call the onDelete function after successful deletion
+            refetch() // Call the onDelete function after successful deletion
           })
           .catch((error) => {
             Swal.fire({

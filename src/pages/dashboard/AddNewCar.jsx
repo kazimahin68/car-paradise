@@ -3,8 +3,11 @@
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { AuthContext } from "../../authProvider/AuthProvider";
 
 const AddNewCar = () => {
+  const {user} = useContext(AuthContext)
   const handleSubmit = async (e) => {
     e.preventDefault();
     Swal.fire({
@@ -25,6 +28,7 @@ const AddNewCar = () => {
         const price = form.price.value;
         const brand_country = form.brand_country.value;
         const model = form.model.value;
+        const available_quantity = form.available_quantity.value;
         // Clear the form after submission
         form.reset();
         const data = {
@@ -32,9 +36,11 @@ const AddNewCar = () => {
           brand_name,
           description,
           img_url,
-          price,
+          price: parseFloat(price),
           brand_country,
           model,
+          available_quantity: parseFloat(available_quantity),
+          merchant_email: user?.email
         };
 
         await fetch("http://localhost:5000/cars", {
@@ -146,6 +152,20 @@ const AddNewCar = () => {
         <input
           type="text"
           name="model"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          required
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-sm font-bold mb-2"
+          htmlFor="available_quantity"
+        >
+          Available Quantity
+        </label>
+        <input
+          type="number"
+          name="available_quantity"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
         />
