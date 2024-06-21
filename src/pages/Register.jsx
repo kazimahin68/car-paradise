@@ -22,7 +22,7 @@ const Register = () => {
       createUser(email, password).then(() => {
         updateUserProfile(name, photo).then(() => {
           const saveUser = { userName: name, email, userPhoto: photo };
-          fetch("https://car-paradise-server.onrender.com/users", {
+          fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

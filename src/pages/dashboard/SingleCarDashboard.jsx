@@ -16,7 +16,7 @@ const SingleCarDashboard = ({ car, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await fetch(`https://car-paradise-server.onrender.com/cars/${_id}`, {
+        await fetch(`http://localhost:5000/cars/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

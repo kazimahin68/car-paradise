@@ -17,7 +17,7 @@ const EditProfileInfo = ({ userData, handleToggle, refetch }) => {
     // updateUserProfile(name, photo).then(() => {
     const updateUser = { userName: name, email, userPhoto: photo };
     console.log(updateUser);
-    await fetch(`https://car-paradise-server.onrender.com/users/${userData.email}`, {
+    await fetch(`http://localhost:5000/users/${userData.email}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",

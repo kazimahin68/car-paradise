@@ -18,7 +18,7 @@ const GoogleLogin = () => {
         email: loggedUser.email,
         userPhoto: loggedUser.photoURL,
       };
-      fetch("https://car-paradise-server.onrender.com/users", {
+      fetch("http://localhost:5000/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",

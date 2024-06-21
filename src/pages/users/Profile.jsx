@@ -14,7 +14,7 @@ const Profile = () => {
   const {data: userData = [], refetch} = useQuery({
     queryKey: ["users"],
     queryFn: async() =>{
-      const res = await fetch(`https://car-paradise-server.onrender.com/users/${user?.email}`)
+      const res = await fetch(`http://localhost:5000/users/${user?.email}`)
       return res.json()
     }
   })
