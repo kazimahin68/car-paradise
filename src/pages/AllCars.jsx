@@ -10,7 +10,7 @@ const AllCars = () => {
   } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/cars");
+      const res = await fetch("https://car-paradise-server.onrender.com/cars");
       return res.json();
     },
   });

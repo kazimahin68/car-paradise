@@ -6,7 +6,7 @@ const Cars = () => {
   const { data: cars = [] } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/cars/popular");
+      const res = await fetch("https://car-paradise-server.onrender.com/cars/popular");
       return res.json();
     },
   });

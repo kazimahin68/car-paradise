@@ -9,7 +9,7 @@ const EditCar = () => {
   const { data: car = {}, refetch } = useQuery({
     queryKey: ["car"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/cars/${id}`);
+      const res = await fetch(`https://car-paradise-server.onrender.com/cars/${id}`);
       return res.json();
     },
   });
@@ -43,7 +43,7 @@ const EditCar = () => {
           model,
         };
 
-        await fetch(`http://localhost:5000/cars/${car._id}`, {
+        await fetch(`https://car-paradise-server.onrender.com/cars/${car._id}`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
