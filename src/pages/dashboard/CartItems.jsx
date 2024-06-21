@@ -1,11 +1,12 @@
 import Swal from "sweetalert2";
 import useCart from "../../hooks/useCart";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const CartItems = () => {
   const [cart, refetch] = useCart();
-  console.log(cart);
-  const [axiosSecure] = useAxiosSecure()
+//   console.log(cart);
+  const [axiosSecure] = useAxiosSecure();
   // console.log(_id, brand_name, carId, buyer_email, model, price, img_url)
 
   const handleDelete = (id) => {
@@ -20,7 +21,6 @@ const CartItems = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/cars/cartItem/${id}`).then((res) => {
-          console.log("delete res", res.data);
           if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire("Removed!", "Your item has been removed.", "success");
@@ -76,7 +76,11 @@ const CartItems = () => {
                 </button>
               </td>
               <th>
-                <button className="btn bg-green-600 btn-sm">Pay</button>
+                <Link
+                  to={`/dashboard/payment/${cartItem._id}`}
+                >
+                  <button className="btn bg-green-600 btn-sm">Pay</button>
+                </Link>
               </th>
             </tr>
           ))}

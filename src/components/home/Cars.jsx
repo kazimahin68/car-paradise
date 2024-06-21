@@ -6,7 +6,7 @@ const Cars = () => {
   const { data: cars = [] } = useQuery({
     queryKey: ["cars"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/cars/popular");
+      const res = await fetch("https://car-paradise-server.onrender.com/cars/popular");
       return res.json();
     },
   });
@@ -14,7 +14,7 @@ const Cars = () => {
     <div className="mt-20">
       <h2 className="font-bold text-center text-2xl">Popular Cars</h2>
       <hr className="w-full mt-4" />
-      <div className="flex flex-wrap gap-4 m-auto w-4/5 mt-10">
+      <div className="flex flex-wrap gap-4 justify-center mx-auto w-11/12 mt-10">
         {cars.map((car) => (
           <SingleCar key={car._id} car={car}></SingleCar>
         ))}

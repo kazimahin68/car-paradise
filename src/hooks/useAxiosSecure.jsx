@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://car-paradise-server.onrender.com/',
 })
 const useAxiosSecure = () => {
     const { logOut } = useContext(AuthContext);

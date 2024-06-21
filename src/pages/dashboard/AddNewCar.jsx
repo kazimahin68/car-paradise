@@ -43,7 +43,7 @@ const AddNewCar = () => {
           merchant_email: user?.email
         };
 
-        await fetch("http://localhost:5000/cars", {
+        await fetch("https://car-paradise-server.onrender.com/cars", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

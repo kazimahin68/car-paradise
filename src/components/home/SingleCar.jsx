@@ -64,7 +64,7 @@ const SingleCar = ({ car }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure className="h-56">
-        <img src={img_url} alt="car" />
+        <img className="w-full h-full" src={img_url} alt="car" />
       </figure>
       <div className="card-body">
         <h2 className="card-title font-bold">

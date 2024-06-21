@@ -13,6 +13,7 @@ import Profile from "../pages/users/Profile";
 import TraderCars from "../pages/dashboard/TraderCars";
 import AllCars from "../pages/AllCars";
 import CartItems from "../pages/dashboard/CartItems";
+import Payment from "../pages/dashboard/payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/merchant-cars/edit-car/:id",
         element: <PrivateRoute><EditCar></EditCar></PrivateRoute>
+      },
+      {
+        path: "payment/:id",
+        element: <Payment></Payment>
       }
     ],
   },
