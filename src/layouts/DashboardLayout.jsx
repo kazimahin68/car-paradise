@@ -28,6 +28,9 @@ const DashboardLayout = () => {
               <ActiveLink to="">Dashboard</ActiveLink>
             </li>
             <li>
+              <ActiveLink to="cart-items">Cart Items</ActiveLink>
+            </li>
+            <li>
               <ActiveLink to="merchant-cars">Your Cars</ActiveLink>
             </li>
             <li>

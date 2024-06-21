@@ -2,7 +2,7 @@
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
@@ -12,7 +12,7 @@ import useCart from "../../hooks/useCart";
 const SingleCar = ({ car }) => {
   const { user } = useContext(AuthContext);
   const [axiosSecure] = useAxiosSecure();
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
   const [, refetch] = useCart();
   const navigate = useNavigate();
   const { brand_name, model, price, description, img_url, available_quantity } =
@@ -20,7 +20,15 @@ const SingleCar = ({ car }) => {
 
   const handleCart = (car) => {
     if (!user && user?.email) {
-      toast("You have to Login first to add cart");
+      toast.success("Car information successfully updated!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       navigate("/login");
       return;
     }
@@ -28,11 +36,11 @@ const SingleCar = ({ car }) => {
       carId: car._id,
       brand_name,
       model,
-      price,
+      price: parseFloat(price),
       description,
       img_url,
       buyer_email: user?.email,
-      available_quantity,
+      available_quantity: parseFloat(available_quantity),
       merchant_email: car.merchant_email,
     };
 
@@ -45,16 +53,13 @@ const SingleCar = ({ car }) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        setCart(prevCartItem => [
-            ...prevCartItem,
-            car._id
-        ]);
+        setCart((prevCartItem) => [...prevCartItem, car._id]);
       }
     });
   };
-  const isAddedToCart = carId => {
+  const isAddedToCart = (carId) => {
     return cart.includes(carId);
-};
+  };
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -73,16 +78,20 @@ const SingleCar = ({ car }) => {
             Price: <span className="font-normal">{price} </span>$
           </p>
         </div>
-          <p className="mb-4 font-bold">
-            Available Stock: <span className="font-normal">{available_quantity} </span>
-          </p>
+        <p className="mb-4 font-bold">
+          Available Stock:{" "}
+          <span className="font-normal">{available_quantity} </span>
+        </p>
         <p className="mb-4">{description}</p>
         <div className="card-actions justify-center">
-          <button onClick={() => handleCart(car)} 
-          disabled={available_quantity === 0 || isAddedToCart(car._id)}
-          className="btn btn-primary">
+          <button
+            onClick={() => handleCart(car)}
+            disabled={available_quantity === 0 || isAddedToCart(car._id)}
+            className="btn btn-primary"
+          >
             Add to Cart
           </button>
+          <ToastContainer></ToastContainer>
         </div>
       </div>
     </div>

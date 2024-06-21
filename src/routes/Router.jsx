@@ -12,6 +12,7 @@ import EditCar from "../pages/dashboard/EditCar";
 import Profile from "../pages/users/Profile";
 import TraderCars from "../pages/dashboard/TraderCars";
 import AllCars from "../pages/AllCars";
+import CartItems from "../pages/dashboard/CartItems";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Dashboard></Dashboard>
+          </PrivateRoute>
+        )
+      },
+      {
+        path: "cart-items",
+        element: (
+          <PrivateRoute>
+            <CartItems></CartItems>
           </PrivateRoute>
         )
       },

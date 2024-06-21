@@ -13,6 +13,7 @@ const Cars = () => {
   return (
     <div className="mt-20">
       <h2 className="font-bold text-center text-2xl">Popular Cars</h2>
+      <hr className="w-full mt-4" />
       <div className="flex flex-wrap gap-4 m-auto w-4/5 mt-10">
         {cars.map((car) => (
           <SingleCar key={car._id} car={car}></SingleCar>
